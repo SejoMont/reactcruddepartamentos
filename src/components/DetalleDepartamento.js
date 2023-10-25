@@ -9,7 +9,7 @@ export default class DetalleDepartamento extends Component {
     return (
       <div>
         <h1>Detalle Departamento {this.props.numero}</h1>
-        <NavLink to="/">Back to List</NavLink>
+        <NavLink to="/">&larr;	Back to List</NavLink>
         {
           <ul className="list-group">
             <li className="list-group-item">

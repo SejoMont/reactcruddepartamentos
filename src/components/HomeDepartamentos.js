@@ -47,12 +47,14 @@ export default class HomeDepartamentos extends Component {
                   <th>Nombre</th>
                   <th>Localidad</th>
                   <th>Detalles</th>
+                  <th>Borrar</th>
+                  <th>Editar</th>
                 </tr>
               </thead>
               <tbody>
                 {this.state.departamentos.map((departamento, index) => {
                   return (
-                    <tr>
+                    <tr key={index}>
                       <td>{departamento.nombre}</td>
                       <td>{departamento.localidad}</td>
                       <td>
@@ -68,6 +70,28 @@ export default class HomeDepartamentos extends Component {
                           className="nav-link active"
                         >
                           📄
+                        </NavLink>
+                      </td>
+                      <td>
+                        <NavLink
+                          to={
+                            "/eliminar/" +
+                            departamento.numero
+                          }
+                          className="nav-link active"
+                        >
+                          🗑️
+                        </NavLink>
+                      </td>
+                      <td>
+                        <NavLink
+                          to={
+                            "/update/" +
+                            departamento.numero
+                          }
+                          className="nav-link active"
+                        >
+                          ✏️
                         </NavLink>
                       </td>
                     </tr>
